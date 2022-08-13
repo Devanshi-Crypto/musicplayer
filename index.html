@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Music Player</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor-->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  
+            <!--Header-->
+            <header id="header" class="fixed-top ">
+                <div class="fixed-header">
+                <div class="container d-flex align-items-center justify-content-between">
+                    <h1 class="logo"><a href="index.html" class="logo d-flex"><img src="assets/images/favicon.jpg" alt ="logo" class = "img fluid"><span>&nbsp;&nbsp;Music Player</span></a></h1>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--  Search Bar -->
+                    <div class="search-bar">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                        <form class="search-form d-flex ">
+                          <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                          <button type="submit" title="Search"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div> 
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <nav id="navbar" class="navbar ms-auto">
+                        <ul class="d-flex align-items-center">
+                            <li><a href="index.html" class="nav-link scrollto active" >Home</a></li>
+                            <li class="dropdown"><a href="#explore" class="dropdown-toggle"><span>Explore</span> </a>
+                                <ul>
+                                  <li><a href="pop.html">POP</a></li>
+                                  <li><a href="bollywood.html">BOLLYWOOD</a></li>
+                                  <li><a href="indie.html">INDIE</a></li>
+                                  <li><a href="insrumental.html">INSTRUMENTAL</a></li>
+                                  <li><a href="rb.html">R&B</a></li>
+                                  <li><a href="rock.html">ROCK</a></li>
+                                 
+                                </ul>
+                            </li>
+                            <li><a class="nav-link scrollto" href="#about">About</a></li>
+                        </ul>
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                    </nav>
+                </div>
+                </div>
+            </header><!-- End header-->
+            <section id="carousel">
+            <div class="carousel-container">
+                <input type="radio" name="slider" id="item-1" checked>
+                <input type="radio" name="slider" id="item-2">
+                <input type="radio" name="slider" id="item-3">
+                <div class="cards">
+                    <label class="card" for="item-1" id="song-1">   
+                        <img src="assets/images/img4.jpg" alt="" >   
+                        <div class="absolute-div">
+                            <div class="carousel-caption">
+                                <h3><strong>SOUNDTRACK OF YOUR LIFE</strong><br>
+                                <a href="#web-player" class="btn-get-started scrollto">TUNE IN</a></h3>
+                            </div>
+                        </div>
+                    </label>             
+                    <label class="card" for="item-2" id="song-2">
+                        <img src="assets/images/img2.jpg" alt="" >  
+                        <div class="absolute-div">
+                            <div class="carousel-caption">
+                                <h3>Music For Everyone</h3>
+                            </div>
+                        </div>                  
+                    </label>
+                    <label class="card" for="item-3" id="song-3">
+                        <img src="assets/images/img3.jpg" alt="" >  
+                        <div class="absolute-div">
+                            <div class="carousel-caption">
+                                <h3>Music Goes Everywhere</h3>
+                            </div>
+                        </div>                  
+                    </label>
+                </div>
+            </div>           
+        </section>
+       
+
+
+        <main id = "main">
+
+
+            <!--Explore Section-->
+           
+    <section id="explore" class="explore">
+        <div class="container">
+            
+                <div class ="section-title">
+                    <h2>EXPLORE</h2>
+                    <h3>Dive in the world of music</h3>
+          <div class="row">
+            <div class="col-lg-3 col-md-4 col-6 col-6">
+              <div class="icon-box">
+                <i class="ri-store-line" style="color: #ffbb2c;"></i>
+                <h3><a href="">POP</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6">
+              <div class="icon-box">
+                <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+                <h3><a href="">BOLLYWOOD</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 mt-4 mt-md-0">
+              <div class="icon-box">
+                <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+                <h3><a href="">INDIE</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 mt-4 mt-lg-0">
+              <div class="icon-box">
+                <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+                <h3><a href="">INSTRUMENTAL</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 mt-4">
+              <div class="icon-box">
+                <i class="ri-database-2-line" style="color: #47aeff;"></i>
+                <h3><a href="">WORKOUT</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 mt-4">
+              <div class="icon-box">
+                <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+                <h3><a href="">R&B</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 mt-4">
+              <div class="icon-box">
+                <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+                <h3><a href="">ROCK</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6 mt-4">
+              <div class="icon-box">
+                <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+                <h3><a href="">PODCASTS</a></h3>
+              </div>
+            </div>            
+          </div>
+  
+        </div>
+      </section><!-- End Explore Section -->
+
+
+            <!--About Section-->
+           
+    <section id="about" class="about">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>About US</h2>
+            <h3 style="color: plum">Learn More&nbsp;<span>About Us</span></h3>
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                
+                <p class="description" style="color:indigo">Music will go wherever you go.</p>
+              </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                
+                <p class="description" style="color:indigo">Welcome to Music Player that
+                    lets you express yourself and connect, through the tracks you
+                    love and the ones you're about to discover.</p>  
+              </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-tachometer"></i></div>
+                
+                <p class="description" ><ul style="color:indigo">
+                    <li>Better Sound Quality</li>
+                    <li>From Podcasts to Top Charts, Latest Trends to your rescue.</li>
+                </ul></p>
+              </div>
+            </div>
+  
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-world"></i></div>
+                
+                <p class="description">Music For Everyone</p>
+              </div>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End About Section -->
+
+           <!--Web Player Section-->
+           <section id ="web-player" class="web-player">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>WEB PLAYER</h2><br>
+                        <a href="explore.html" class="btn-get-started scrollto">Play Music</a>
+
+                    </div>
+                    
+              
+                      <div class="row webplayer-container">
+              
+                        <div class="col-lg-4 col-md-6 web-item filter-web">
+                            <a href="pop.html" > <img src="assets/images/img14.jpg" class="img-fluid" alt="" vspace="20" title="POP"></a>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 web-item filter-web">
+                          <a href="rb.html" > <img src="assets/images/img13.jpg" class="img-fluid" alt=""vspace="20" title="R&B"></a>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 web-item filter-web">
+                          <a href="instrumental.html" > <img src="assets/images/img15.jpg" class="img-fluid" alt="" vspace="20" title="INSTRUMENTAL"></a>
+                        </div>
+                    
+                        <div class="col-lg-4 col-md-6 web-item filter-web">
+                          <a href="rock.html" > <img src="assets/images/img 11.jpg" class="img-fluid" alt="" title="ROCK"></a>
+                        </div>
+                    
+                        <div class="col-lg-4 col-md-6 web-item filter-web">
+                            <a href="indie.html" > <img src="assets/images/img 7.jpg" class="img-fluid" alt="" title="INDIE"></a>
+                        </div>
+                    
+                        <div class="col-lg-4 col-md-6 web-item filter-web">
+                            <a href="bollywood.html" > <img src="assets/images/img16.jpg" class="img-fluid" alt="" title="BOLLLYWOOD"></a>
+                        </div>
+              
+                        
+                  
+              
+                    
+                </div>
+           </section>
+</main>
+            
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+        </body>
+</html>

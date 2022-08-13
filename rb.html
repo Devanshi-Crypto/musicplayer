@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+  background-image: url(assets/images/img2.jpg);
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes harlem {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+  20% {
+    transform: scale(1.03, 1);
+    -webkit-transform: scale(1.03, 1);
+    -moz-transform: scale(1.03, 1);
+    -o-transform: scale(1.03, 1);
+    -ms-transform: scale(1.03, 1);
+  }
+  40% {
+    transform: scale(0.97, 1);
+    -webkit-transform: scale(0.97, 1);
+    -moz-transform: scale(0.97, 1);
+    -o-transform: scale(0.97, 1);
+    -ms-transform: scale(0.97, 1);
+  }
+  60% {
+    transform: scale(1.01, 1);
+    -webkit-transform: scale(1.01, 1);
+    -moz-transform: scale(1.01, 1);
+    -o-transform: scale(1.01, 1);
+    -ms-transform: scale(1.01, 1);
+  }
+  80% {
+    transform: scale(0.99, 1);
+    -webkit-transform: scale(0.99, 1);
+    -moz-transform: scale(0.99, 1);
+    -o-transform: scale(0.99, 1);
+    -ms-transform: scale(0.99, 1);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 2.5px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  color: #fff;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  line-height: 11px;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  color: #777;
+}
+
+h4 {
+  margin: 0 0 5px 29px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 14px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  color: #fff;
+}
+
+h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 13px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  color: #6d6d6d;
+}
+
+h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 13px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+.screen {
+  background-color: #fff;
+  padding: 0;
+  height: 650px;
+  width: 366px;
+  position: absolute;
+  left: 50%;
+	top: 0;
+	transform: translate(-50%, 0);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.header {
+  display: inline-flex;
+  margin: 0 0 40px 0;
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+label.main:before {
+  position: absolute;
+  top: 23px;
+  left: 23px;
+  font-family: FontAwesome;
+  content: '\f0c9';
+  color: #959595;
+  font-size: 16px;
+  line-height: 16px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease-in;
+}
+
+label.main:hover:before {
+  color: #bbb;
+}
+
+.screen > #magicButton:checked ~ label.main:before {
+  color: #ff564c;
+  transition: all 0.3s ease-in;
+}
+
+.coverImage {
+  background: url('data:image/jpeg;base64,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') no-repeat;
+  background-size: cover;
+  width: 366px;
+  height: 366px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0% 0%;
+  transition: all 0.3s ease-in;
+}
+
+.screen > #magicButton:checked ~ .coverImage {
+  transform: scale(0.251, 0.251);
+  left: 23px;
+  top: 60px;
+  transition: all 0.3s ease-in;
+  border-radius: 20px;
+}
+
+.search:before {
+  position: absolute;
+  top: 23px;
+  right: 23px;
+  font-family: FontAwesome;
+  content: '\f002';
+  color: #959595;
+  font-size: 16px;
+  line-height: 16px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease-in;
+}
+
+.search:hover:before {
+  color: #bbb;
+}
+
+.bodyPlayer {
+  position: absolute;
+  top: 366px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 286px;
+  width: 366px;
+  background: #111;
+  transition: all 0.3s ease-in;
+}
+
+.screen > #magicButton:checked ~ .bodyPlayer {
+  height: 470px;
+  left: 0;
+  top: 180px;
+  transition: all 0.3s ease-in;
+}
+
+.list {
+  border-spacing: 0px 2px;
+  width: 342px;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 378px;
+  left: 12px;
+  transform-origin: 0% 0%;
+  transform: scale(0.1, 0.1);
+  transition: all 0.3s ease-in;
+}
+
+.list tr {
+  transform-origin: 0% 50%;
+  height: 50px;
+  text-align: center;
+  background: #1d1d1d;
+  text-indent: 8px;
+}
+
+.list tr:hover {
+  background: #222;
+  cursor: pointer;
+}
+
+.title {
+  width: 215px;
+  text-align: left;
+  text-indent: 15px;
+  transition: all 0.11s ease-in;
+}
+
+.list tr:hover .title {
+  padding-left: 5px;
+  width: 210px;
+  transition: all 0.11s ease-in;
+}
+
+.screen > #magicButton:checked ~ .list {
+  top: 192px;
+  left: 12px;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1, 1);
+  transition: all 0.3s ease-in;
+}
+
+.screen > #magicButton:checked ~ table tr:nth-child(1) {
+  opacity: 1;
+  animation: harlem 0.3s linear forwards;
+  animation-delay: 0.185s;
+}
+
+.screen > #magicButton:checked ~ table tr:nth-child(2) {
+  animation: harlem 0.3s linear forwards;
+  animation-delay: 0.2s;
+}
+
+.screen > #magicButton:checked ~ table tr:nth-child(3) {
+  animation: harlem 0.3s linear forwards;
+  animation-delay: 0.215s;
+}
+
+.screen > #magicButton:checked ~ table tr:nth-child(4) {
+  animation: harlem 0.3s linear forwards;
+  animation-delay: 0.23s;
+}
+
+.screen > #magicButton:checked ~ table tr:nth-child(5) {
+  animation: harlem 0.3s linear forwards;
+  animation-delay: 0.245s;
+}
+
+.screen > #magicButton:checked ~ table tr:nth-child(6) {
+  animation: harlem 0.3s linear forwards;
+  animation-delay: 0.26s;
+}
+
+.screen > #magicButton:checked ~ table tr:nth-child(7) {
+  animation: harlem 0.3s linear forwards;
+  animation-delay: 0.275s;
+}
+
+.screen > #magicButton:checked ~ table tr:nth-child(8) {
+  animation: harlem 0.3s linear forwards;
+  animation-delay: 0.29s;
+}
+
+.screen > #magicButton:checked ~ table tr:nth-child(9) {
+  animation: harlem 0.3s linear forwards;
+  animation-delay: 0.305s;
+}
+
+
+
+.bar {
+  background: url('http://imgh.us/bar_3.svg') no-repeat;
+  background-size: 100%;
+  width: 320px;
+  height: 21px;
+  position: absolute;
+  top: 407px;
+  left: 23px;
+  transform-origin: 0% 0%;
+  transition: all 0.3s ease-in;
+}
+
+.screen > #magicButton:checked ~ .bar {
+  top: 119px;
+  left: 126px;
+  transform: scale(0.6875, 0.6875);
+  transition: all 0.3s ease-in;
+}
+
+.info {
+  width: 157px;
+  position: absolute;
+  left: 104px;
+  top: 440px;
+  transition: all 0.3s ease-in;
+}
+
+.screen > #magicButton:checked ~ .info {
+  top: 66px;
+  left: 126px;
+  text-align: left;
+  transition: all 0.3s ease-in;
+}
+
+.screen > #magicButton:checked ~ .info h4 {
+  margin-left: 0;
+  font-size: 16px;
+  color: #111111;
+  transition: all 0.3s ease-in;
+}
+
+.player {
+  background: none;
+  text-align: center;
+  font-family: FontAwesome;
+  color: #fff;
+  font-size: 26px;
+  line-height: 26px;
+  width: 216px;
+  height: 35px;
+  position: absolute;
+  bottom: 100px;
+  left: 48%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+  transition: all 0.3s ease-in;
+  border-spacing: 0;
+}
+
+.player td {
+  width: 72px;
+}
+
+.backward:before {
+  content: "\f04a";
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+
+.play:before {
+  content: "\f04b";
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+
+.forward:before {
+  content: "\f04e";
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+
+.backward:hover:before {
+  color: #bbb;
+  transition: all 0.15s linear;
+}
+
+.play:hover:before {
+  color: #bbb;
+  transition: all 0.15s linear;
+}
+
+.forward:hover:before {
+  color: #bbb;
+  transition: all 0.15s linear;
+}
+
+td > #play:checked ~ label.play:before {
+  content: "\f04c";
+  transition: all 0.15s linear;
+}
+
+.screen > #magicButton:checked ~ .player {
+  bottom: 4px;
+  left: -44px;
+  transform: scale(0.45, 0.45);
+  transition: all 0.3s ease-in;
+}
+
+.shadow {
+  background: rgba(17, 17, 17, 0.8);
+  width: 366px;
+  height: 50px;
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  box-shadow: 0px -15px 40px rgba(17, 17, 17, 0.8);
+}
+
+.footer {
+  background: none;
+  font-family: FontAwesome;
+  color: #6d6d6d;
+  font-size: 15px;
+  line-height: 15px;
+  height: 45px;
+  width: 360px;
+  position: absolute;
+  bottom: 10px;
+  left: 23px;
+  z-index: 20;
+  transition: all 0.15s linear;
+  transition: bottom 0.3s linear;
+}
+
+.love:before {
+  content: "\f08a";
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+
+.shuffle:before {
+  content: "\f074";
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+
+.repeat:before {
+  content: "\f01e";
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+
+.options:before {
+  content: "\f141";
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+
+.love:hover:before {
+  color: #bbb;
+  transition: all 0.15s linear;
+}
+
+.shuffle:hover:before {
+  color: #bbb;
+  transition: all 0.15s linear;
+}
+
+.repeat:hover:before {
+  color: #bbb;
+  transition: all 0.15s linear;
+}
+
+.options:hover:before {
+  color: #bbb;
+  transition: all 0.15s linear;
+}
+
+td > #love:checked ~ label.love:before {
+  content: "\f004";
+  color: #ff564c;
+  transition: all 0.15s linear;
+}
+
+td > #shuffle:checked ~ label.shuffle:before {
+  color: #ff564c;
+  transition: all 0.15s linear;
+}
+
+td > #repeat:checked ~ label.repeat:before {
+  color: #ff564c;
+  transition: all 0.15s linear;
+}
+
+.screen > #magicButton:checked ~ .footer {
+  bottom: -60px;
+  transition: all 0.3s ease-in;
+}
+
+.current {
+  position: absolute;
+  right: 23px;
+  bottom: -60px;
+  transition: all 0.3s ease-in;
+}
+
+.screen > #magicButton:checked ~ .current {
+  bottom: 17px;
+  transition: all 0.3s ease-in;
+}
+
+audio {
+  visibility: hidden;
+}
+  </style>
+</head>
+<body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <article class="screen">
+    <input type="checkbox" value="None" id="magicButton" name="check" />
+    <label class="main" for="magicButton"></label>
+  
+    <div class="coverImage"></div>
+    <div class="search"></div>
+    <div class="bodyPlayer"></div>
+  
+    <table class="list">
+      <tr class="song">
+        <td class="nr">
+          <h5>1<h5></td>
+              <td class="title"><h6>Olivia<h6></td>
+              <td class="length"><h5>3:54<h5></td>
+            </tr>
+          
+            <tr class="song">
+              <td class="nr"><h5>2<h5></td>
+              <td class="title"><h6 style="color: #ff564c;">Make You Mine<h6></td>
+              <td class="length"><h5>3:22<h5></td>
+            </tr>
+          
+            <tr class="song">
+              <td class="nr"><h5>3<h5></td>
+              <td class="title"><h6>Night Changes<h6></td>
+              <td class="length"><h5>3:34<h5></td>
+              <td><input type="checkbox" id="heart2"/><label class="zmr" for="heart2"></label></td>
+            </tr>
+          
+            <tr class="song">
+              <td class="nr"><h5>4<h5></td>
+              <td class="title"><h6>Fall Into Me<h6></td>
+              <td class="length"><h5>3:27<h5></td>
+              <td><input type="checkbox" id="heart3" checked /><label class="zmr" for="heart3"></label></td>
+            </tr>
+            
+            <tr class="song">
+              <td class="nr"><h5>5<h5></td>
+              <td class="title"><h6>You are Stuck in My Heart<h6></td>
+              <td class="length"><h5>3:08<h5></td>
+              <td><input type="checkbox" id="heart4"/><label class="zmr" for="heart4"></label></td>
+            </tr>
+            
+            <tr class="song">
+              <td class="nr"><h5>6<h5></td>
+              <td class="title"><h6>I Want It That Way<h6></td>
+              <td class="length"><h5>4:13<h5></td>
+              <td><input type="checkbox" id="heart5"/><label class="zmr" for="heart5"></label></td>
+            </tr>
+            
+            <tr class="song">
+              <td class="nr"><h5>7<h5></td>
+              <td class="title">Sunflower<h6><h6></td>
+              <td class="length"><h5>4:57<h5></td>
+              <td><input type="checkbox" id="heart6"/><label class="zmr" for="heart6"></label></td>
+            </tr>
+            
+            <tr class="song">
+              <td class="nr"><h5>8<h5></td>
+              <td class="title"><h6>Lotus Inn<h6></td>
+              <td class="length"><h5>3:11<h5></td>
+              <td><input type="checkbox" id="heart7"/><label class="zmr" for="heart7"></label></td>
+            </tr>
+            
+            <tr class="song">
+              <td class="nr"><h5>9<h5></td>
+              <td class="title"><h6>Just My Type<h6></td>
+              <td class="length"><h5>3:46<h5></td>
+              <td><input type="checkbox" id="heart8"/><label class="zmr" for="heart8"></label></td>
+            </tr>
+          </table>
+          
+          <div class="shadow"></div>
+          
+          <div class="bar"></div>
+          
+          <div class="info">
+            <h4>MAKE YOU MINE</h4>
+            <h3>THE PUBLIC</h3>
+          </div>
+  <audio preload="auto" id="audio" controls>
+    <source src="assets/music/mine.mp3">
+    <source src="assets/music/mine.mp3">
+    </audio>
+          <table class="player">
+            <td><input type="checkbox" id="backward"/><label class="backward" for="backward"></label></td>
+            <td><input type="checkbox" id="play" title="Play" onclick="togglePlayPause()"/><label class="play" for="play"></label></td>
+            <td><input type="checkbox" id="forward"/><label class="forward" for="forward"></label></td>
+          </table>
+          
+          <table class="footer">
+            <td><input type="checkbox" id="love" checked /><label class="love" for="love"></label></td>
+            <td><input type="checkbox" id="shuffle"/><label class="shuffle" for="shuffle"></label></td>
+            <td><input type="checkbox" id="repeat" checked /><label class="repeat" for="repeat"></label></td>
+            <td><input type="checkbox" id="options"/><label class="options" for="options"></label></td>
+          </table>
+          
+          <div class="current"><h2>GLORY</h2></div>
+          
+        
+      </article>
+      <script>
+        
+
+
+var audio = document.getElementById('audio');
+var playpause = document.getElementById("play");
+
+
+function togglePlayPause() {
+   if (audio.paused || audio.ended) {
+      playpause.title = "Pause";
+      audio.play();
+   } else {
+      playpause.title = "Play";
+      audio.pause();
+   }
+}
+
+
+      </script>  
+</body>
+</html>
